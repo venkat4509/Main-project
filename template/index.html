@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    <h1>Diabetes Predicton using PIMA Indian Dataset</h1><br><br>
+    <form action="{{url_for('predict')}}" method="post">
+
+        <label for="fname">Pregnancies :</label><br>
+        <input type="text" name="Pregnancies"><br><br>
+
+        <label for="fname">Glucose :</label><br>
+        <input type="text" name="Glucose"><br><br>
+
+        <label for="fname">BloodPressure :</label><br>
+        <input type="text" name="BloodPressure"><br><br>
+
+        <label for="fname">SkinThickness :</label><br>
+        <input type="text" name="SkinThickness"><br><br>
+
+        <label for="fname">Insulin :</label><br>
+        <input type="text" name="Insulin"><br><br>
+
+        <label for="fname">BMI :</label><br>
+        <input type="text" name="BMI"><br><br>
+
+        <label for="fname">DiabetesPedigreeFunction :</label><br>
+        <input type="text" name="DiabetesPedigreeFunction"><br><br>
+
+        <label for="fname">Age :</label><br>
+        <input type="text" name="Age"><br><br>
+
+
+        <button type="submit">Predict</button>
+
+    </form>
+    
+    <h3><br>{{prediction_test}}</h3>
+    <!-- <h3><br>{{datapassed}}</h3>
+    <h3><br>{{dataprocessed}}</h3> -->
+</body>
+</html>
