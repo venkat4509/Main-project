@@ -37,7 +37,7 @@ def predict():
 
 
 #Heart
-@app.route('/predict-heart', methods=['POST'])
+@app.route('/predictHeart', methods=['POST'])
 def predictHeart():
 
     # get the input features as a list of strings
@@ -54,8 +54,8 @@ def predictHeart():
 
 
 #Breastcancer
-@app.route('/predict-breast', methods=['POST'])
-def predict():
+@app.route('/predictbreast', methods=['POST'])
+def predictbreast():
 
     # get the input features as a list of strings
     featuresBreast = [x for x in request.form.values()]
