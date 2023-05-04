@@ -1,5 +1,6 @@
 import pickle
 from flask import Flask, render_template, request
+import numpy as np
 
 app = Flask(__name__)
 
@@ -47,7 +48,7 @@ def predictHeart():
     input_featuresHeart = scalerheart.transform([featuresHeart])
 
     # make the prediction using the loaded model
-    predictionHeart = heart.predict(input_featuresHeart)
+    predictionHeart = np.round(heart.predict(input_featuresHeart))
 
     outputHeart = predictionHeart[0]
     return render_template('index.html', prediction_testheart=f'Final Outcome of the patient is: {outputHeart}')
