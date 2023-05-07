@@ -48,9 +48,9 @@ def predictHeart():
     input_featuresHeart = scalerheart.transform([featuresHeart])
 
     # make the prediction using the loaded model
-    predictionHeart = np.round(heart.predict(input_featuresHeart))
+    predictionHeart = int(np.round(heart.predict(input_featuresHeart))[0])
 
-    outputHeart = predictionHeart[0]
+    outputHeart = predictionHeart
     return render_template('index.html', prediction_testheart=f'Final Outcome of the patient is: {outputHeart}')
 
 
@@ -65,9 +65,9 @@ def predictbreast():
     input_featuresBreast = scalerbreast.transform([featuresBreast])
 
     # make the prediction using the loaded model
-    predictionBreast = breast.predict(input_featuresBreast)
+    predictionBreast = int(np.round(breast.predict(input_featuresBreast))[0])
 
-    output = predictionBreast[0]
+    output = predictionBreast
     return render_template('index.html', prediction_testbreast=f'Final Outcome of the patient is: {output}')
 
 if __name__ == '__main__':
