@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinical Disease Prediction</title>
+    <title>Diabetes_Prediction</title>
     <style>
         body{
             background-color: #BDCDD6;
-            text-align: center;
         }
         div {
             text-align: center;
-            padding-top: 13%;
         }
         form {
             display: inline-block;
@@ -52,15 +50,45 @@
             font-size: 18px;
         }
     </style>
-
 </head>
 <body>
+    
     <div>
-        <a href="Diabetes.html" target="_blank"><h1>Diabetes Prediction</h1></a>
-        <a href="Heart.html" target="_blank"><h1>Heart Disease Prediction</h1></a>
-        <a href="BreastCancer.html" target="_blank"><h1>BreastCancer Prediction</h1></a>
+        <br><br><br>
+        <h1>Diabetes Predicton using PIMA Indian Dataset</h1><br><br>
+        <form action="{{url_for('predict')}}" method="post">
+
+            <label for="fname">Pregnancies :</label><br>
+            <input type="text" name="Pregnancies"><br><br>
+
+            <label for="fname">Glucose :</label><br>
+            <input type="text" name="Glucose"><br><br>
+
+            <label for="fname">BloodPressure :</label><br>
+            <input type="text" name="BloodPressure"><br><br>
+
+            <label for="fname">SkinThickness :</label><br>
+            <input type="text" name="SkinThickness"><br><br>
+
+            <label for="fname">Insulin :</label><br>
+            <input type="text" name="Insulin"><br><br>
+
+            <label for="fname">BMI :</label><br>
+            <input type="text" name="BMI"><br><br>
+
+            <label for="fname">DiabetesPedigreeFunction :</label><br>
+            <input type="text" name="DiabetesPedigreeFunction"><br><br>
+
+            <label for="fname">Age :</label><br>
+            <input type="text" name="Age"><br><br>
+
+
+            <button type="submit">Predict</button>
+
+        </form>
         
-    </div>
+        <h3><br>{{prediction_test}}</h3>
+
 
 </body>
 </html>

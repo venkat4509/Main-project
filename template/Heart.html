@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart_Disease_Prediction</title>
+    <style>
+        body{
+            background-color: #BDCDD6;
+        }
+        div {
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            text-align: right;
+        }
+        input[type=text] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        button[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>    
+        <br><br>
+        <h1>Heart Disease Predicton using Framingham Dataset</h1><br><br>
+        <form action="{{url_for('predictHeart')}}" method="post">
+
+            <label for="fname">Male :</label><br>
+            <input type="text" name="male"><br><br>
+
+            <label for="fname">Age :</label><br>
+            <input type="text" name="ageheart"><br><br>
+
+            <label for="fname">Education :</label><br>
+            <input type="text" name="education"><br><br>
+
+            <label for="fname">CurrentSmoker :</label><br>
+            <input type="text" name="CurrentSmoker"><br><br>
+
+            <label for="fname">CigsPerDay :</label><br>
+            <input type="text" name="CigsPerDay"><br><br>
+
+            <label for="fname">BPMeds :</label><br>
+            <input type="text" name="BPMeds"><br><br>
+
+            <label for="fname">PrevalentStroke :</label><br>
+            <input type="text" name="PrevalentStroke"><br><br>
+
+            <label for="fname">PrevalentHyp :</label><br>
+            <input type="text" name="PrevalentHyp"><br><br>
+
+            <label for="fname">Diabetes :</label><br>
+            <input type="text" name="Diabetess"><br><br>
+
+            <label for="fname">Totchol :</label><br>
+            <input type="text" name="Totchol"><br><br>
+
+            <label for="fname">SysBp :</label><br>
+            <input type="text" name="SysBp"><br><br>
+
+            <label for="fname">DiaBp :</label><br>
+            <input type="text" name="DiaBp"><br><br>
+
+            <label for="fname">BMI :</label><br>
+            <input type="text" name="BMI"><br><br>
+
+            <label for="fname">HeartRate :</label><br>
+            <input type="text" name="HeartRate"><br><br>
+
+            <label for="fname">Glucose :</label><br>
+            <input type="text" name="glucosee"><br><br>
+
+            <button type="submit">Predict</button>
+
+        </form>
+        <h3><br>{{prediction_testheart}}</h3>
+    </div>
+
+
+</body>
+</html>
