@@ -20,6 +20,18 @@ app.template_folder = 'template'
 def index():
     return render_template('index.html')
 
+@app.route('/Diabetes.html')
+def diabetes():
+    return render_template('Diabetes.html')
+
+@app.route('/Heart.html')
+def heartdisease():
+    return render_template('Heart.html')
+
+@app.route('/BreastCancer.html')
+def breastCancer():
+    return render_template('BreastCancer.html')
+
 #Diabetes
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -34,7 +46,7 @@ def predict():
     prediction = model.predict(input_features)
 
     output = prediction[0]
-    return render_template('index.html', prediction_test=f'Final Outcome of the patient is: {output}')
+    return render_template('Diabetes.html', prediction_test=f'Final Outcome of the patient is: {output}')
 
 
 #Heart
@@ -51,7 +63,7 @@ def predictHeart():
     predictionHeart = int(np.round(heart.predict(input_featuresHeart))[0])
 
     outputHeart = predictionHeart
-    return render_template('index.html', prediction_testheart=f'Final Outcome of the patient is: {outputHeart}')
+    return render_template('Heart.html', prediction_testheart=f'Final Outcome of the patient is: {outputHeart}')
 
 
 #Breastcancer
@@ -68,7 +80,7 @@ def predictbreast():
     predictionBreast = int(np.round(breast.predict(input_featuresBreast))[0])
 
     output = predictionBreast
-    return render_template('index.html', prediction_testbreast=f'Final Outcome of the patient is: {output}')
+    return render_template('BreastCancer.html', prediction_testbreast=f'Final Outcome of the patient is: {output}')
 
 if __name__ == '__main__':
     app.run(debug=True)
